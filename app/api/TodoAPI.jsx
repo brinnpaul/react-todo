@@ -17,5 +17,26 @@ module.exports = {
 
     }
    return $.isArray(todos) ? todos : [];
-  }
+ },
+ filterTodos: function(todos, showCompleted, searchText) {
+   let filteredTodos = todos;
+   // filter by showCompleted
+   filteredTodos = filteredTodos.filter((todo) => {
+     return !todo.completed || showCompleted;
+   })
+   // filter by searchText
+   filteredTodos = filteredTodos.filter((todo) => {
+     let text = todo.text.toLowerCase();
+     return searchText.length === 0 || text.indexOf(searchText) > -1;
+   });
+
+   // Sort todoes with non-completed first
+   filteredTodos.sort((prev, next) => {
+     if (!prev.completed && next.completed) return -1;
+     if (prev.completed && !next.completed) return 1;
+     else return 0;
+   })
+
+   return filteredTodos;
+ }
 };
