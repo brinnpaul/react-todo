@@ -2,9 +2,9 @@ let React = require('react');
 let uuid = require('node-uuid');
 let moment = require('moment');
 
-import TodoList from 'TodoList'
-import AddTodo from 'AddTodo'
-let TodoSearch = require('TodoSearch');
+import TodoList from 'TodoList';
+import AddTodo from 'AddTodo';
+import TodoSearch from 'TodoSearch';
 let TodoAPI = require('TodoAPI');
 
 let TodoApp = React.createClass({
