@@ -24,3 +24,10 @@ export let toggleShowComplete = () => {
     type: "TOGGLE_SHOW"
   };
 };
+
+export let addTodos = (todosArray) => {
+  return {
+    type: "ADD_TODOS",
+    todos: todosArray
+  };
+};

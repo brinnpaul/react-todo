@@ -29,13 +29,29 @@ describe('Actions', () => {
       expect(res).toEqual(action);
   });
 
+  it('should generate add todos action object', () => {
+    let todos = [{
+      id: 111,
+      text: 'whatever',
+      completed: false,
+      completedAt: undefined,
+      createdAt: 324235
+    }];
+    let action = {
+      type: "ADD_TODOS",
+      todos
+    };
+    let res = actions.addTodos(todos);
+    expect(res).toEqual(action);
+  });
+  
   it('should generate toggle show completed action', () => {
       let action = {
         type: "TOGGLE_SHOW"
       };
 
       let res = actions.toggleShowComplete();
-
       expect(res).toEqual(action);
   });
+
 });
